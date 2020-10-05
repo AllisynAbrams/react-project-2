@@ -7,6 +7,29 @@
   pointer-events: none;
 }
 
+.favorites-nav-link {
+  padding-right: 20px;
+}
+
+.navbar.navbar-light.bg-faded {
+  background: #88D18A;
+}
+
+.pet-card-listing {
+  border: 1px solid;
+  width: 30%;
+  margin: 20px;
+  padding: 10px 0px;
+
+}
+.pet-card-container {
+  border: 1px solid;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+ 
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
