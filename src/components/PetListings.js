@@ -58,8 +58,9 @@ useEffect (() => {
 // otherwise display 'loading..'
 
 const displayAnimals = 
+// since not all animals have photos, need to chain filter and map to filter for only animals that have animals.photos[0].small
 (animals[0]) ? animals.map((animal, index) => {
-  console.log('this is animals.url', animals[index].url)
+  console.log('this is animals.photos', animal.photos)
   return (
 		<div className="pet-card-listing">
 			<div className='pet-card'>
