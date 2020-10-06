@@ -34,7 +34,7 @@ const Header = (props) => {
 					<Nav navbar>
 						<NavItem>
 							<Link to='/'>
-								<NavLink href='/components/'>All Pets</NavLink>
+								<NavLink>All Pets</NavLink>
 							</Link>
 						</NavItem>
 
@@ -46,15 +46,7 @@ const Header = (props) => {
 					</Nav>
 				</Collapse>
 			</Navbar>
-			<Switch>
-				<Route exact path='/Favorites'>
-					<Favorites />
-				</Route>
-
-				<Route exact path='/'>
-					<PetListings />
-				</Route>
-			</Switch>
+			
 		</div>
 	);
 };
