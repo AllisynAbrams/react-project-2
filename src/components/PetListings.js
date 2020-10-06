@@ -59,13 +59,17 @@ useEffect (() => {
 
 const displayAnimals = 
 // since not all animals have photos, need to chain filter and map to filter for only animals that have animals.photos[0].small
-(animals[0]) ? animals.map((animal, index) => {
+(animals[0]) ? 
+animals.filter((animal) => {
+    return animal.photos.length > 0;
+})
+.map((animal, index) => {
   console.log('this is animals.photos', animal.photos)
   return (
 		<div className="pet-card-listing">
 			<div className='pet-card'>
 				<img
-					src='https://res.cloudinary.com/dv7inaqe9/image/upload/v1601935915/template_primary_hoarhj.jpg'
+					src={animal.photos[0].small}
 					alt='pets image'
 				/>
 				<p>Name: {animal.name}</p>
