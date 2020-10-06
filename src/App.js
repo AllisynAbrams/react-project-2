@@ -23,6 +23,20 @@ function App() {
 						<PetListings />
 					</Route>
 
+					<Route exact path='/SinglePetDetails'>
+						<PetListings />
+					</Route>
+
+					<Route exact path='/SinglePetDetails/:id'>
+						<PetListings />
+					</Route>
+
+					{/* <Route
+						path='/SinglePetDetails/:id'
+						render={(routerProps) => (
+							<SinglePetDetails {...routerProps} />
+						)}
+					/> */}
 				</Switch>
 			</main>
 		</div>

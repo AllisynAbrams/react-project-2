@@ -89,11 +89,28 @@ useEffect (() => {
 // console.log('this is animals in useState', animals)
 
 
-return  (
-    <div>
-        
-<PetCards animals={animals}/>
-    </div> )
+return (
+	<div>
+		<Route exact path='/'>
+			<PetCards animals={animals} />
+		</Route>
+
+		<Route exact path='/SinglePetDetails'>
+			<SinglePetDetails />
+		</Route>
+
+		{/* <Route exact path='/SinglePetDetails/:id'>
+			<SinglePetDetails />
+		</Route> */}
+
+		<Route
+			exact path='/SinglePetDetails/:id'
+			render={(routerProps) => (
+				<SinglePetDetails {...routerProps} />
+			)}
+		/>
+	</div>
+);
 };
 
 

@@ -5,14 +5,10 @@ import Favorites from './Favorites';
 import SinglePetDetails from './SinglePetDetails';
 
 const PetCards = (props) => {
-	const [current, setCurrent] = useState('');
+	const [current, setCurrent] = useState("");
 
 	//  handler to show details page of clicked animal
-	const handleDetailsClick = (key) => {
-		setCurrent(key);
-		console.log('this is current', current);
-	};
-
+	
 	const displayAnimalCards =
 		// since not all animals have photos, need to chain filter and map to filter for only animals that have animals.photos[0].small
 		props.animals[0]
@@ -24,11 +20,11 @@ const PetCards = (props) => {
 						console.log('this is animal.photos', animal.photos);
 						return (
 							<div className='pet-card-listing'>
-								<Link to={'/SinglePetDetails/' + animal.name}>
+								<Link to={`/SinglePetDetails/${animal.id}`}>
 									<div
 										className='pet-card'
 										key={animal.id}
-										onClick={() => handleDetailsClick(animal.id)}>
+										id={animal.id}>
 										<img src={animal.photos[0].small} alt='pets image' />
 										<p>Name: {animal.name}</p>
 										<p>Age: {animal.age}</p>
@@ -50,14 +46,14 @@ const PetCards = (props) => {
 	return (
 		<div>
 			<div className='pet-card-container'>{displayAnimalCards}</div>
-			<Switch>
-				<Route
-					path='/SinglePetDetails/:id'
+			
+				{/* <Route
+					path='/SinglePetDetails'
 					render={(routerProps) => (
 						<SinglePetDetails {...routerProps} current={current} />
 					)}
-				/>
-			</Switch>
+				/> */}
+			
 		</div>
 	);
 };
