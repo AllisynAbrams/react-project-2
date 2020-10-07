@@ -5,8 +5,6 @@ import { Route, Link, Switch } from 'react-router-dom';
 const SinglePetDetails = (props) => {
     const [current, setCurrent] = useState({})
 
-    
-
 
 // Used this article as basis to make the API call.  
 // https://dojo.domo.com/t5/Domo-Developer/Tutorial-build-your-own-connector-against-petfinder-API/td-p/48593#
@@ -42,7 +40,8 @@ const getToken = async (id) => {
   // THE DATA YOU SEE IN THE CONSOLE
   // console.log('this is petJson from App', petJson)
   // console.log('this is petJson.animals[0]', petJson.animals[0].type)
-  console.log('this is single pet details petJson.animals', petJson)
+  console.log('this is single pet details petJson', petJson)
+  console.log('this is single pet details color', petJson.animal.colors.primary);
   setCurrent(petJson.animal)
 }
 
@@ -52,9 +51,28 @@ useEffect (() => {
  },[]);
 
 
-	return (
-    <h1>hi</h1>
-    )
+	return current.photos ? (
+		<div>
+			<h1>Hi, my name is {current.name}!</h1>
+			<img src={current.photos[0].medium} alt='pet picture' />
+			<div className='animal-stats'>
+				<p>Pet ID: {current.id}</p>
+				<p>
+					Location: {current.contact.address.city}, {" "} 
+					{current.contact.address.state}
+				</p>
+				<p>Name: {current.name}</p>
+				<p>Age: {current.age}</p>
+				<p>Primary Breed: {current.breeds.primary}</p>
+				<p>Gender: {current.gender}</p>
+				<p>Size: {current.size}</p>
+				<p>Primary Color: {current.colors.primary}</p>
+			</div>
+			<a href={`mailto:${current.contact.email}`}>Email us about this pet</a>
+			<p>More About {current.name}:</p>
+			<p>{current.description}</p>
+		</div>
+	) : null;
 };
 
 export default SinglePetDetails;
