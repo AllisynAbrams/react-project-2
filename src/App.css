@@ -15,7 +15,7 @@
   background: #88D18A;
 }
 
-.pet-card-listing {
+.pet-card {
   border: 1px solid;
   width: 30%;
   margin: 20px;
@@ -23,7 +23,22 @@
 
 }
 .pet-card-container {
+  /* border: 1px solid; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+ 
+}
+
+.fave-pet-card {
   border: 1px solid;
+  width: 30%;
+  margin: 20px;
+  padding: 10px 0px;
+
+}
+.fave-pet-card-container {
+  /* border: 1px solid; */
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

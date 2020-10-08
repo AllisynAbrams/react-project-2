@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import '../App.css';
 import { Route, Link, Switch } from 'react-router-dom';
-import Favorites from './Favorites';
-import SinglePetDetails from './SinglePetDetails';
+// import Favorites from './Favorites';
+// import SinglePetDetails from './SinglePetDetails';
 
 const PetCards = (props) => {
 		
@@ -17,20 +17,23 @@ const PetCards = (props) => {
 					.map((animal, index) => {
 						// console.log('this is animal.photos', animal.photos);
 						return (
-							<div className='pet-card-listing'>
+							<div className='pet-card' key={animal.id}>
 								<Link to={`/SinglePetDetails/${animal.id}`}>
-									<div
-										className='pet-card'
-										key={animal.id}>
+									<div className='pet-card-info'>
 										<img src={animal.photos[0].small} alt='pets image' />
 										<p>Name: {animal.name}</p>
 										<p>Age: {animal.age}</p>
 										<p>Primary Breed: {animal.breeds.primary}</p>
-										<p>id: {animal.id}</p>
+										<p>
+											Location: {animal.contact.address.city},{' '}
+											{animal.contact.address.state}
+										</p>
 									</div>
 								</Link>
 
-								<button className='add-to-favorites-button' onClick={() => props.addToFavorites(animal)}>
+								<button
+									className='add-to-favorites-button'
+									onClick={() => props.addToFavorites(animal)}>
 									Add to Favorites
 								</button>
 							</div>

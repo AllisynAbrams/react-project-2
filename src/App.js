@@ -14,25 +14,9 @@ function App() {
 			</nav>
 
 			<main>
-				<Switch>
-					<Route exact path='/Favorites'>
-						<Favorites />
-					</Route>
 
-					<Route exact path='/'>
-						<PetListings />
-					</Route>
-
-					<Route exact path='/SinglePetDetails'>
-						<PetListings />
-					</Route>
-
-					<Route exact path='/SinglePetDetails/:id'>
-						<PetListings />
-					</Route>
-
-
-				</Switch>
+        <PetListings />
+				
 			</main>
 		</div>
 	);
