@@ -33,20 +33,17 @@ const Header = (props) => {
 				<Collapse isOpen={!collapsed} navbar>
 					<Nav navbar>
 						<NavItem>
-							<Link to='/'>
-								<NavLink>All Pets</NavLink>
-							</Link>
+							<Link to='/'>All Pets</Link>
+								{/* <NavLink>All Pets</NavLink>
+							</Link> */}
 						</NavItem>
 
 						<NavItem>
-							<Link to='/Favorites'>
-								<NavLink>My Favorites</NavLink>
-							</Link>
+							<Link to='/Favorites'>Favorites</Link>
 						</NavItem>
 					</Nav>
 				</Collapse>
 			</Navbar>
-			
 		</div>
 	);
 };

@@ -31,12 +31,7 @@ function App() {
 						<PetListings />
 					</Route>
 
-					{/* <Route
-						path='/SinglePetDetails/:id'
-						render={(routerProps) => (
-							<SinglePetDetails {...routerProps} />
-						)}
-					/> */}
+
 				</Switch>
 			</main>
 		</div>

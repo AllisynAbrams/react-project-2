@@ -58,7 +58,7 @@ useEffect (() => {
 			<div className='animal-stats'>
 				<p>Pet ID: {current.id}</p>
 				<p>
-					Location: {current.contact.address.city}, {" "} 
+					Location: {current.contact.address.city},{' '}
 					{current.contact.address.state}
 				</p>
 				<p>Name: {current.name}</p>
@@ -68,7 +68,9 @@ useEffect (() => {
 				<p>Size: {current.size}</p>
 				<p>Primary Color: {current.colors.primary}</p>
 			</div>
-			<a href={`mailto:${current.contact.email}`}>Email us about this pet</a>
+			<a href={`mailto:${current.contact.email}`}>
+				Email us about this pet
+			</a>
 			<p>More About {current.name}:</p>
 			<p>{current.description}</p>
 		</div>

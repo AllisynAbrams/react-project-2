@@ -8,6 +8,21 @@ import Favorites from './Favorites'
 const PetListings = (props) => {
 
       const [animals, setAnimals] = useState([])
+      const [faves, setFaves] = useState([])
+
+    
+      const addToFavorites = (animal) => {
+          const favesArray = [...faves]
+          const animalIndex = favesArray.indexOf(animal);
+          if(animalIndex < 0) {
+              favesArray.push(animal)
+              console.log(`adding ${animal.name} to favesArray`)
+
+              setFaves(favesArray)
+              console.log('this is faves', faves)
+          }
+      }
+
       
 
 // Used this article as basis to make the API call.  
@@ -41,9 +56,8 @@ const getToken = async () => {
   const petJson = await petRes.json()
   // THE DATA YOU SEE IN THE CONSOLE
   // console.log('this is petJson from App', petJson)
-  // console.log('this is petJson.animals[0]', petJson.animals[0].type)
-  console.log('this is petJson.animals', petJson.animals)
-  console.log('this is petJson.animals[0].id', petJson.animals[0].id);
+//   console.log('this is petJson.animals', petJson.animals)
+//   console.log('this is petJson.animals[0].id', petJson.animals[0].id);
   setAnimals(petJson.animals)
 
 
@@ -56,59 +70,36 @@ useEffect (() => {
  },[]);
 
 
-
-//  ternary conditional to say, if the animals aray (at least first item) is defined/TRUE (AKA available from 
-// the api call now), then map over the animals array and return the url of each item/index,
-// otherwise display 'loading..'
-
-// const displayAnimals = 
-// // since not all animals have photos, need to chain filter and map to filter for only animals that have animals.photos[0].small
-// (animals[0]) ? 
-// animals.filter((animal) => {
-//     return animal.photos.length > 0;
-// })
-// .map((animal, index) => {
-//   console.log('this is animals.photos', animal.photos)
-//   return (
-// 		<div className="pet-card-listing">
-// 			<div className='pet-card'>
-// 				<img
-// 					src={animal.photos[0].small}
-// 					alt='pets image'
-// 				/>
-// 				<p>Name: {animal.name}</p>
-// 				<p>Age: {animal.age}</p>
-// 				<p>Primary Breed: {animal.breeds.primary}</p>
-// 			</div>
-//             <button className="add-to-favorites-button">Add to Favorites</button>
-// 		</div>
-// 	);
-//     }) : 'LOADING....'
-
-// console.log('this is displayAnimals', displayAnimals)
-// console.log('this is animals in useState', animals)
-
-
 return (
 	<div>
 		<Route exact path='/'>
-			<PetCards animals={animals} />
+			<PetCards
+				// key={animals.id}
+				animals={animals}
+				faves={faves}
+				addToFavorites={addToFavorites}
+			/>
 		</Route>
 
 		<Route exact path='/SinglePetDetails'>
 			<SinglePetDetails />
 		</Route>
 
-		{/* <Route exact path='/SinglePetDetails/:id'>
-			<SinglePetDetails />
-		</Route> */}
-
 		<Route
-			exact path='/SinglePetDetails/:id'
-			render={(routerProps) => (
-				<SinglePetDetails {...routerProps} />
-			)}
+			exact
+			path='/SinglePetDetails/:id'
+			render={(routerProps) => <SinglePetDetails {...routerProps} />}
 		/>
+
+		<Route exact path='/Favorites'>
+			<Favorites faves={faves} />
+		</Route>
+		
+        {/* <Route
+			exact
+			path='/Favorites'
+			render={(routerProps) => <Favorites {...routerProps} faves={faves} />}
+		/> */}
 	</div>
 );
 };
