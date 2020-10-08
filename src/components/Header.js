@@ -9,10 +9,9 @@ import {
 	NavbarBrand,
 	Nav,
 	NavItem,
-	NavLink,
 } from 'reactstrap';
 
-const Header = (props) => {
+const Header = () => {
 	const [collapsed, setCollapsed] = useState(true);
 
 	const toggleNavbar = () => setCollapsed(!collapsed);
@@ -20,8 +19,8 @@ const Header = (props) => {
 	return (
 		<div>
 			<Navbar color='faded' light>
-				<NavbarBrand href='/' className='mr-auto'>
-					FURRY FRIENDS
+				<NavbarBrand className='mr-auto'>
+					<Link to='/'>Furry Friends</Link>
 				</NavbarBrand>
 
 				<Link to='/Favorites'>
@@ -33,8 +32,6 @@ const Header = (props) => {
 					<Nav navbar>
 						<NavItem>
 							<Link to='/'>All Pets</Link>
-								{/* <NavLink>All Pets</NavLink>
-							</Link> */}
 						</NavItem>
 
 						<NavItem>

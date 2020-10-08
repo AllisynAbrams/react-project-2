@@ -47,13 +47,13 @@ const getToken = async (id) => {
 
 useEffect (() => {
   getToken();
- },[]);
+ },);
 
 
 	return current.photos ? (
 		<div>
 			<h1>Hi, my name is {current.name}!</h1>
-			<img src={current.photos[0].medium} alt='pet picture' />
+			<img src={current.photos[0].medium} alt='pet' />
 			<div className='animal-stats'>
 				<p>Pet ID: {current.id}</p>
 				<p>
