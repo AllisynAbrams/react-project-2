@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import '../App.css';
-import { Route, Link, Switch } from 'react-router-dom';
-// import Favorites from './Favorites';
-// import SinglePetDetails from './SinglePetDetails';
+import { Link} from 'react-router-dom';
+
 
 const PetCards = (props) => {
 		

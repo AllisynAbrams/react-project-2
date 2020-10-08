@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import '../App.css';
-import { Route, Link, Switch } from 'react-router-dom';
-import Favorites from './Favorites'
-import PetListings from './PetListings'
+import { Link } from 'react-router-dom';
+
 import {
 	Collapse,
 	Navbar,

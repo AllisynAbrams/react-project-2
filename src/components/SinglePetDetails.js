@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import '../App.css';
-import { Route, Link, Switch } from 'react-router-dom';
 
 const SinglePetDetails = (props) => {
     const [current, setCurrent] = useState({})

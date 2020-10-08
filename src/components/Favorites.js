@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { Route, Link, Switch } from 'react-router-dom';
+
 
 const Favorites = (props) => {
     console.log('this is Favorites props:', props)
