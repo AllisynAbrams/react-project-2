@@ -20,18 +20,18 @@ button.mr-2.navbar-toggler {
   padding: 0px 3px;
 }
 
-.favorites-nav-link {
+.favorites-nav-link, .favorites-nav-link-allpets {
   padding-right: 15px;
   margin: 0;
 }
 
-.favorites-nav-link, .nav-item a {
+.favorites-nav-link, .favorites-nav-link-allpets, .nav-item a {
   color: white;
   font-size: 12px;
   background:  #017c85;
 }
 
-.favorites-nav-link:hover, .nav-item a:hover {
+.favorites-nav-link:hover, .favorites-nav-link-allpets:hover, .nav-item a:hover {
   text-decoration: underline;
 }
 
@@ -61,6 +61,10 @@ a.mr-auto.navbar-brand:hover {
 
 .mr-2.navbar-toggler {
   background: white;
+}
+
+.favorites-nav-link-allpets {
+  display: none;
 }
 
 /* --- BANNER --- */
@@ -171,10 +175,12 @@ color: #036269;
 }
 .animal-stats p {
   margin: 5px 0px;
+  background: white;
 }
 
 .id, .location {
   font-weight: 600;
+  background: white;
 }
 
 .single-pet-info a{
@@ -185,7 +191,7 @@ color: #036269;
   align-self: center;
   color: white;
   box-shadow: 1px 2px 3px #00000070;
-  margin: 15px 0px;
+  margin: 20px 0px;
 }
 
 .single-pet-info a:hover {
@@ -209,22 +215,57 @@ color: #036269;
 
 
 
+/* -------- MEDIA QUERY TABLET-------- */
+
+@media (min-width: 768px) {
+   
+  .mr-2.navbar-toggler {
+      display: none;
+}
+
+.favorites-nav-link-allpets {
+  display: block;
+}
+
+.favorites-nav-link-allpets, .favorites-nav-link {
+  font-size: 14px;
+}
+
+a.mr-auto.navbar-brand {
+  font-size: 30px;
+}
+
+.quote {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 24px;
+  margin: 200px 0px 0px 30px;
+  font-weight: 600;
+  padding: 10px 120px 10px 10px;
+  text-align: left;
+}
+}
+
+
+/* -------- MEDIA QUERY DESKTOP-------- */
+
+@media (min-width: 1024px) 
 
 
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 
-}
+} */
 
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */

@@ -61,10 +61,9 @@ const getToken = async (id) => {
 	setCurrent(petJson.animal);
 }
 
-
 useEffect (() => {
   getToken();
- },);
+ },[]);
 
 
 	return current.photos ? (

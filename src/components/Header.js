@@ -31,6 +31,10 @@ const Header = () => {
 				<p className='favorites-nav-link'>MY FAVORITES</p>
 			</Link>
 
+			<Link to='/'>
+				<p className='favorites-nav-link-allpets'>ALL PETS</p>
+			</Link>
+
 			<NavbarToggler onClick={toggleNavbar} className='mr-2' />
 			<Collapse isOpen={!collapsed} navbar>
 				<Nav navbar>

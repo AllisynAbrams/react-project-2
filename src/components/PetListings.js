@@ -80,7 +80,7 @@ const PetListings = (props) => {
 		});
 		const petJson = await petRes.json();
 		// THE DATA YOU SEE IN THE CONSOLE
-		// console.log('this is petJson from App', petJson)
+		console.log('this is petJson from App', petJson)
 		//   console.log('this is petJson.animals', petJson.animals)
 		//   console.log('this is petJson.animals[0].id', petJson.animals[0].id);
 		setAnimals(petJson.animals);
