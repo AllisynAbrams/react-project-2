@@ -12,36 +12,43 @@ const SinglePetDetails = (props) => {
 // let id = props.current.id
 
 const getToken = async (id) => {
-  const client_id = 'ibOcZPb7jS41hAMJi3oLQWM9oj6h0alpVMmAwBktJZiLeRhYj6'
-  const client_secret = 'lTZW5iz2bA84aDs4fz09e9yArV5qbJNMpIYGycv3'
+	// const client_id = 'ibOcZPb7jS41hAMJi3oLQWM9oj6h0alpVMmAwBktJZiLeRhYj6';
+	// const client_secret = 'lTZW5iz2bA84aDs4fz09e9yArV5qbJNMpIYGycv3';
 
+	// original keys:
+	const client_id = 'QxXaRDtQTuNoIk4bJWwWxmhclOT1enpq0MzMD6oI1ZbHn6DJ8g';
+	const client_secret = 'uFVBfSAunMb6lDrmuZXY9pSsnLPjpajjph8WoiMS';
 
-  // FIRST FETCH CALL
-  const res = await fetch("https://api.petfinder.com/v2/oauth2/token", {
-    body: `grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}`,
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    method: "POST"
-  })
-  const json = await res.json()
-  const token = json.access_token
-  
+	// FIRST FETCH CALL
+	const res = await fetch('https://api.petfinder.com/v2/oauth2/token', {
+		body: `grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}`,
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded',
+		},
+		method: 'POST',
+	});
+	const json = await res.json();
+	const token = json.access_token;
 
-  // SECOND FETCH CALL
-  const petRes = await  fetch(`https://api.petfinder.com/v2/animals/${props.match.params.id}`, 
-    {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-    })
-  const petJson = await petRes.json()
-  // THE DATA YOU SEE IN THE CONSOLE
-  // console.log('this is petJson from App', petJson)
-  // console.log('this is petJson.animals[0]', petJson.animals[0].type)
-  console.log('this is single pet details petJson', petJson)
-  console.log('this is single pet details color', petJson.animal.colors.primary);
-  setCurrent(petJson.animal)
+	// SECOND FETCH CALL
+	const petRes = await fetch(
+		`https://api.petfinder.com/v2/animals/${props.match.params.id}`,
+		{
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		}
+	);
+	const petJson = await petRes.json();
+	// THE DATA YOU SEE IN THE CONSOLE
+	// console.log('this is petJson from App', petJson)
+	// console.log('this is petJson.animals[0]', petJson.animals[0].type)
+	console.log('this is single pet details petJson', petJson);
+	console.log(
+		'this is single pet details color',
+		petJson.animal.colors.primary
+	);
+	setCurrent(petJson.animal);
 }
 
 

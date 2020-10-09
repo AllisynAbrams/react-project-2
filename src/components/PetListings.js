@@ -45,8 +45,12 @@ const PetListings = (props) => {
 
 	// It requires an initial call to get a Bearer Token which is then used in a second call to retrieve the data
 	const getToken = async () => {
-		const client_id = 'ibOcZPb7jS41hAMJi3oLQWM9oj6h0alpVMmAwBktJZiLeRhYj6';
-		const client_secret = 'lTZW5iz2bA84aDs4fz09e9yArV5qbJNMpIYGycv3';
+		// const client_id = 'ibOcZPb7jS41hAMJi3oLQWM9oj6h0alpVMmAwBktJZiLeRhYj6';
+		// const client_secret = 'lTZW5iz2bA84aDs4fz09e9yArV5qbJNMpIYGycv3';
+
+		// original keys:
+		const client_id = 'QxXaRDtQTuNoIk4bJWwWxmhclOT1enpq0MzMD6oI1ZbHn6DJ8g';
+		const client_secret = 'uFVBfSAunMb6lDrmuZXY9pSsnLPjpajjph8WoiMS';
 
 		// FIRST FETCH CALL
 		const res = await fetch('https://api.petfinder.com/v2/oauth2/token', {

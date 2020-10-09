@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Fresca&family=Handlee&family=Kalam&family=Noto+Sans+HK:wght@300;400&family=Viga&display=swap');
+
 .App {
   text-align: center;
   background: #cbeaeddc;
+  font-family: 'Noto Sans HK', sans-serif;
 }
 
 .App-logo {
@@ -9,25 +12,33 @@
 }
 
 /* --- NAVBAR --- */
+
+button.mr-2.navbar-toggler {
+  padding: 0px 3px;
+}
 .favorites-nav-link {
-  padding-right: 20px;
+  padding-right: 15px;
 }
 
 .favorites-nav-link {
   margin: 0;
 }
 
-#logo a {
+a.mr-auto.navbar-brand {
   color: #d3de32;
+  font-family: 'Viga', sans-serif;
+  font-size: 25px;
 }
 
-#logo a:hover {
-  zoom: 120%;
+a.mr-auto.navbar-brand:hover {
+  zoom: 105%;
   text-decoration: none;
+  color: #d3de32;
 }
 
 .favorites-nav-link, .nav-item a {
   color: #ffffdd;
+  font-size: 12px;
 }
 
 .favorites-nav-link:hover, .nav-item a:hover {
@@ -39,7 +50,7 @@
   background: #017c85;
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: 10px 15px;
   
 }
 
@@ -56,11 +67,11 @@
 .quote {
   position: absolute;
   display: inline;
-  background: rgba(0, 0, 0, 0.37);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   font-size: 18px;
-  margin: 70px 0px 0px 15px;
-  font-weight: 400;
+  margin: 100px 0px 0px 15px;
+  font-weight: 600;
   padding: 6px 35px 6px 8px;
   text-align: center;
 }
@@ -136,6 +147,7 @@ color: #036269;
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+
 }
 
 

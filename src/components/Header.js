@@ -18,23 +18,28 @@ const Header = () => {
 
 	return (
 		<Navbar color='faded' light>
-			<NavbarBrand className='mr-auto' id='logo'>
-				<Link to='/'>Furry Friends</Link>
+			<NavbarBrand href='/' className='mr-auto'>
+				furry friends
 			</NavbarBrand>
+			{/* <NavbarBrand className='mr-auto' id='logo'>
+				<div>
+					<Link to='/'>Furry Friends</Link>
+				</div>
+			</NavbarBrand> */}
 
 			<Link to='/Favorites'>
-				<p className='favorites-nav-link'>My Favorites</p>
+				<p className='favorites-nav-link'>MY FAVORITES</p>
 			</Link>
 
 			<NavbarToggler onClick={toggleNavbar} className='mr-2' />
 			<Collapse isOpen={!collapsed} navbar>
 				<Nav navbar>
-					<NavItem class='nav-link'>
-						<Link to='/'>All Pets</Link>
+					<NavItem className='nav-link'>
+						<Link to='/'>ALL PETS</Link>
 					</NavItem>
 
-					<NavItem class='nav-link'>
-						<Link to='/Favorites'>Favorites</Link>
+					<NavItem className='nav-link'>
+						<Link to='/Favorites'>MY FAVORITES</Link>
 					</NavItem>
 				</Nav>
 			</Collapse>
