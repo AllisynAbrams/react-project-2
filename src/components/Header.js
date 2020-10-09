@@ -34,11 +34,11 @@ const Header = () => {
 			<NavbarToggler onClick={toggleNavbar} className='mr-2' />
 			<Collapse isOpen={!collapsed} navbar>
 				<Nav navbar>
-					<NavItem className='nav-link'>
+					<NavItem className='nav-link' onClick={toggleNavbar}>
 						<Link to='/'>ALL PETS</Link>
 					</NavItem>
 
-					<NavItem className='nav-link'>
+					<NavItem className='nav-link' onClick={toggleNavbar}>
 						<Link to='/Favorites'>MY FAVORITES</Link>
 					</NavItem>
 				</Nav>

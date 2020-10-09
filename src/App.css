@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Fresca&family=Handlee&family=Kalam&family=Noto+Sans+HK:wght@300;400&family=Viga&display=swap');
 
+* {
+  background: #cbeaeddc;
+}
 .App {
   text-align: center;
-  background: #cbeaeddc;
+  /* background: #cbeaeddc; */
   font-family: 'Noto Sans HK', sans-serif;
 }
 
@@ -16,12 +19,24 @@
 button.mr-2.navbar-toggler {
   padding: 0px 3px;
 }
-.favorites-nav-link {
-  padding-right: 15px;
-}
 
 .favorites-nav-link {
+  padding-right: 15px;
   margin: 0;
+}
+
+.favorites-nav-link, .nav-item a {
+  color: white;
+  font-size: 12px;
+  background:  #017c85;
+}
+
+.favorites-nav-link:hover, .nav-item a:hover {
+  text-decoration: underline;
+}
+
+li.nav-link.nav-item {
+  background: #017c85;
 }
 
 a.mr-auto.navbar-brand {
@@ -34,15 +49,6 @@ a.mr-auto.navbar-brand:hover {
   zoom: 105%;
   text-decoration: none;
   color: #d3de32;
-}
-
-.favorites-nav-link, .nav-item a {
-  color: white;
-  font-size: 12px;
-}
-
-.favorites-nav-link:hover, .nav-item a:hover {
-  text-decoration: underline;
 }
 
 .navbar.navbar-light.bg-faded {
@@ -88,7 +94,20 @@ a.mr-auto.navbar-brand:hover {
   margin-bottom: 10px;
 }
 
-.pet-card a {
+ .pet-card-info p, .fave-pet-card-info p {
+   margin: 0px;
+   background: white;
+ }
+
+  .pet-card-info p:first-of-type, .fave-pet-card-info p:first-of-type {
+   color: #017c85;
+   font-weight: 500;
+   text-shadow: 0px 0px 1px #00000056;
+   font-family: 'Viga', sans-serif;
+   
+ }
+
+.pet-card a, .fave-pet-card {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -109,7 +128,7 @@ color: #036269;
   align-self: center;
   color: white;
   box-shadow: 1px 2px 3px #00000070;
-  margin-bottom: 10px;
+  margin: 10px 0px;
 }
 
 .add-to-favorites-button:hover, .remove-from-favorites-button:hover {
@@ -120,7 +139,7 @@ color: #036269;
 
 .pet-card, .fave-pet-card {
   border: 2px solid;
-  border-radius: 4px;;
+  border-radius: 4px;
   width: 300px;
   margin: 15px;
   padding: 10px 5px;
@@ -139,7 +158,56 @@ color: #036269;
 }
 
 
+
+
 /* --- SINGLE PET DETAILS PAGE  --- */
+.single-pet-info {
+  background: white;
+  border: 1px solid grey;
+  padding: 5px 10px;
+}
+.pet-intro {
+  margin: 20px 0px;
+}
+.animal-stats p {
+  margin: 5px 0px;
+}
+
+.id, .location {
+  font-weight: 600;
+}
+
+.single-pet-info a{
+  border: 2px solid #017c85;
+  border-radius: 6px;
+  background: #017c85;
+  padding: 3px 10px;
+  align-self: center;
+  color: white;
+  box-shadow: 1px 2px 3px #00000070;
+  margin: 15px 0px;
+}
+
+.single-pet-info a:hover {
+  color: black;
+  background: #017c853a;
+}
+
+.about {
+  font-weight: 600;
+  margin: 0px;
+}
+
+.desc {
+  margin-top: 10px;
+}
+
+.single-pet-pic {
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+
 
 
 
