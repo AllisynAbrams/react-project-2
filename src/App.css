@@ -37,7 +37,7 @@ a.mr-auto.navbar-brand:hover {
 }
 
 .favorites-nav-link, .nav-item a {
-  color: #ffffdd;
+  color: white;
   font-size: 12px;
 }
 
@@ -46,7 +46,6 @@ a.mr-auto.navbar-brand:hover {
 }
 
 .navbar.navbar-light.bg-faded {
-  /* background: #8ec7ec; */
   background: #017c85;
   display: flex;
   align-items: center;
@@ -55,7 +54,7 @@ a.mr-auto.navbar-brand:hover {
 }
 
 .mr-2.navbar-toggler {
-  background: #ffffdd;
+  background: white;
 }
 
 /* --- BANNER --- */
@@ -70,10 +69,10 @@ a.mr-auto.navbar-brand:hover {
   background: rgba(0, 0, 0, 0.4);
   color: white;
   font-size: 18px;
-  margin: 100px 0px 0px 15px;
+  margin: 90px 0px 0px 10px;
   font-weight: 600;
-  padding: 6px 35px 6px 8px;
-  text-align: center;
+  padding: 6px 30px 6px 8px;
+  text-align: left;
 }
 
 .pet-banner {
@@ -102,19 +101,21 @@ color: #036269;
 }
 
 .add-to-favorites-button, .remove-from-favorites-button {
-  border: 1px solid #017c85;
-  border-radius: 8px;
+  border: 2px solid #017c85;
+  border-radius: 6px;
   background: #017c85;
   font-size: 12px;
-  padding: 5px 10px;
+  padding: 3px 10px;
   align-self: center;
   color: white;
   box-shadow: 1px 2px 3px #00000070;
+  margin-bottom: 10px;
 }
 
 .add-to-favorites-button:hover, .remove-from-favorites-button:hover {
-  background: #017c85d5;
-  color: white;
+  /* background: #c3e4e7; */
+  color: black;
+  background: #017c853a;
 }
 
 .pet-card, .fave-pet-card {
