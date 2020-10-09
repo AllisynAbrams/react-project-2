@@ -54,10 +54,7 @@ const getToken = async (id) => {
 	// console.log('this is petJson from App', petJson)
 	// console.log('this is petJson.animals[0]', petJson.animals[0].type)
 	console.log('this is single pet details petJson', petJson);
-	console.log(
-		'this is single pet details color',
-		petJson.animal.colors.primary
-	);
+	// console.log('this is single pet details color', petJson.animal.colors.primary);
 	setCurrent(petJson.animal);
 }
 

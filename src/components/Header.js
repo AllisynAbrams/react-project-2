@@ -21,11 +21,7 @@ const Header = () => {
 			<NavbarBrand href='/' className='mr-auto'>
 				furry friends
 			</NavbarBrand>
-			{/* <NavbarBrand className='mr-auto' id='logo'>
-				<div>
-					<Link to='/'>Furry Friends</Link>
-				</div>
-			</NavbarBrand> */}
+
 
 			<Link to='/Favorites'>
 				<p className='favorites-nav-link'>MY FAVORITES</p>
