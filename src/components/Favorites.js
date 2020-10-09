@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 
 
+
 const Favorites = (props) => {
     console.log('this is Favorites props:', props)
 
@@ -10,16 +11,25 @@ const Favorites = (props) => {
           props.faves.map((animal, index) => {
 			return (
 				<div className='fave-pet-card' key={animal.id}>
+					<img
+						src={animal.photos[0].small}
+						alt='pet image'
+						className='fave-pet-pic'
+					/>
 					<div className='fave-pet-card-info'>
-						<img src={animal.photos[0].small} alt='pets image' />
 						<p>Name: {animal.name}</p>
 						<p>Age: {animal.age}</p>
 						<p>Primary Breed: {animal.breeds.primary}</p>
-
-						<button onClick={() => props.removeFromFavorites(animal)}>
-							Remove from Favorites
-						</button>
+						<p>
+							Location: {animal.contact.address.city},{' '}
+							{animal.contact.address.state}
+						</p>
 					</div>
+					<button
+						className='remove-from-favorites-button'
+						onClick={() => props.removeFromFavorites(animal)}>
+						Remove from Favorites
+					</button>
 				</div>
 			);
 	  })
@@ -28,7 +38,7 @@ const Favorites = (props) => {
     console.log('this is favePets - ', favePets)
 
     return (
-    <div className="fave-pet-card-container">{favePets}</div>
+    <div className="fave-pet-cards-bodycontainer">{favePets}</div>
     )
     
 };

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #cbeaeddc;
 }
 
 .App-logo {
@@ -7,43 +8,129 @@
   pointer-events: none;
 }
 
+/* --- NAVBAR --- */
 .favorites-nav-link {
   padding-right: 20px;
 }
 
+.favorites-nav-link {
+  margin: 0;
+}
+
+#logo a {
+  color: #d3de32;
+}
+
+#logo a:hover {
+  zoom: 120%;
+  text-decoration: none;
+}
+
+.favorites-nav-link, .nav-item a {
+  color: #ffffdd;
+}
+
+.favorites-nav-link:hover, .nav-item a:hover {
+  text-decoration: underline;
+}
+
 .navbar.navbar-light.bg-faded {
-  background: #88D18A;
+  /* background: #8ec7ec; */
+  background: #017c85;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  
 }
 
-.pet-card {
-  border: 1px solid;
-  width: 30%;
-  margin: 20px;
-  padding: 10px 0px;
-
+.mr-2.navbar-toggler {
+  background: #ffffdd;
 }
-.pet-card-container {
-  /* border: 1px solid; */
+
+/* --- BANNER --- */
+.banner {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.quote {
+  position: absolute;
+  display: inline;
+  background: rgba(0, 0, 0, 0.37);
+  color: white;
+  font-size: 18px;
+  margin: 70px 0px 0px 15px;
+  font-weight: 400;
+  padding: 6px 35px 6px 8px;
+  text-align: center;
+}
+
+.pet-banner {
+  max-width: 100%; 
+  margin-top: -5px;
+}
+
+/* --- PET CARDS (LISTINGS AND FAVORITES)--- */
+.pet-pic, .fave-pet-pic {
+  height: 250px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.pet-card a {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
- 
+  color: black;
 }
 
-.fave-pet-card {
-  border: 1px solid;
-  width: 30%;
-  margin: 20px;
-  padding: 10px 0px;
-
+.pet-card a:hover{
+text-decoration: none;
+color: #036269;
 }
-.fave-pet-card-container {
-  /* border: 1px solid; */
+
+.add-to-favorites-button, .remove-from-favorites-button {
+  border: 1px solid #017c85;
+  border-radius: 8px;
+  background: #017c85;
+  font-size: 12px;
+  padding: 5px 10px;
+  align-self: center;
+  color: white;
+  box-shadow: 1px 2px 3px #00000070;
+}
+
+.add-to-favorites-button:hover, .remove-from-favorites-button:hover {
+  background: #017c85d5;
+  color: white;
+}
+
+.pet-card, .fave-pet-card {
+  border: 2px solid;
+  border-radius: 4px;;
+  width: 300px;
+  margin: 15px;
+  padding: 10px 5px;
+  box-shadow: 1px 1px 3px #00000070;
+  background: white;
+ }
+
+.pet-card:hover {
+  box-shadow: 2px 2px 6px #00000070;
+}
+
+.pet-cards-bodycontainer, .fave-pet-cards-bodycontainer  {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
- 
 }
+
+
+/* --- SINGLE PET DETAILS PAGE  --- */
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -51,20 +138,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {

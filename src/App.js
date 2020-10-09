@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
+import { Route } from 'react-router-dom';
 import Header from './components/Header';
 import PetListings from './components/PetListings';
+import Banner from './components/Banner';
 
 
 function App() {
@@ -12,9 +14,12 @@ function App() {
 			</nav>
 
 			<main>
+				<Route exact path='/'>
+					<Banner 
+          backgroundImage={'https://i.imgur.com/BI9kwQv.jpg?1/'} />
+				</Route>
 
-        <PetListings />
-				
+				<PetListings />
 			</main>
 		</div>
 	);

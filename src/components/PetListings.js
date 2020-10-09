@@ -5,6 +5,7 @@ import PetCards from './PetCards'
 import SinglePetDetails from './SinglePetDetails'
 import Favorites from './Favorites'
 
+
 const PetListings = (props) => {
 	const [animals, setAnimals] = useState([]);
 	const [faves, setFaves] = useState([]);
@@ -82,7 +83,6 @@ const PetListings = (props) => {
 		<div>
 			<Route exact path='/'>
 				<PetCards
-					// key={animals.id}
 					animals={animals}
 					faves={faves}
 					addToFavorites={addToFavorites}
@@ -99,9 +99,6 @@ const PetListings = (props) => {
 				render={(routerProps) => <SinglePetDetails {...routerProps} />}
 			/>
 
-			{/* <Route exact path='/Favorites'>
-			<Favorites faves={faves} />
-		</Route> */}
 
 			<Route
 				exact

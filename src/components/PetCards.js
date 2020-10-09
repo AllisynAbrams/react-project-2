@@ -18,8 +18,12 @@ const PetCards = (props) => {
 						return (
 							<div className='pet-card' key={animal.id}>
 								<Link to={`/SinglePetDetails/${animal.id}`}>
+									<img
+										src={animal.photos[0].medium}
+										alt='pets image'
+										className='pet-pic'
+									/>
 									<div className='pet-card-info'>
-										<img src={animal.photos[0].small} alt='pets image' />
 										<p>Name: {animal.name}</p>
 										<p>Age: {animal.age}</p>
 										<p>Primary Breed: {animal.breeds.primary}</p>
@@ -45,8 +49,7 @@ const PetCards = (props) => {
 
 	return (
 		<div>
-			<div className='pet-card-container'>{displayAnimalCards}</div>
-			
+			<div className='pet-cards-bodycontainer'>{displayAnimalCards}</div>
 		</div>
 	);
 };

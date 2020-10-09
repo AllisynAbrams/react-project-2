@@ -17,30 +17,28 @@ const Header = () => {
 	const toggleNavbar = () => setCollapsed(!collapsed);
 
 	return (
-		<div>
-			<Navbar color='faded' light>
-				<NavbarBrand className='mr-auto'>
-					<Link to='/'>Furry Friends</Link>
-				</NavbarBrand>
+		<Navbar color='faded' light>
+			<NavbarBrand className='mr-auto' id='logo'>
+				<Link to='/'>Furry Friends</Link>
+			</NavbarBrand>
 
-				<Link to='/Favorites'>
-					<p className='favorites-nav-link'>My Favorites</p>
-				</Link>
+			<Link to='/Favorites'>
+				<p className='favorites-nav-link'>My Favorites</p>
+			</Link>
 
-				<NavbarToggler onClick={toggleNavbar} className='mr-2' />
-				<Collapse isOpen={!collapsed} navbar>
-					<Nav navbar>
-						<NavItem>
-							<Link to='/'>All Pets</Link>
-						</NavItem>
+			<NavbarToggler onClick={toggleNavbar} className='mr-2' />
+			<Collapse isOpen={!collapsed} navbar>
+				<Nav navbar>
+					<NavItem class='nav-link'>
+						<Link to='/'>All Pets</Link>
+					</NavItem>
 
-						<NavItem>
-							<Link to='/Favorites'>Favorites</Link>
-						</NavItem>
-					</Nav>
-				</Collapse>
-			</Navbar>
-		</div>
+					<NavItem class='nav-link'>
+						<Link to='/Favorites'>Favorites</Link>
+					</NavItem>
+				</Nav>
+			</Collapse>
+		</Navbar>
 	);
 };
 
